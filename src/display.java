@@ -2,13 +2,11 @@
 import java.text.DecimalFormat;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This program is used to calculate the ideal weight of the height that the user inputs
  */
 
 /**
- *
+ * April 12, 2018
  * @author seden0957
  */
 public class display extends javax.swing.JFrame {
@@ -166,22 +164,22 @@ public class display extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-       double height,weight, i, I, m, M; //systemOfMeasurment; //heightInInches, heightInMetres;
-       DecimalFormat x = new DecimalFormat ("###.00");
+       double height,weight, i, I, m, M; 
+       DecimalFormat x = new DecimalFormat ("###.00"); //to make sure there aren't too many decimals 
        String name, systemOfMeasurment;
        height = Double.parseDouble(heightInput.getText());
        name = nameInput.getText();
-       systemOfMeasurment = /*Double.parseDouble*/(systemInput.getText());
-       i = 1;
+       systemOfMeasurment = (systemInput.getText());
+       i = 1; //imperial 
        I = 1;    
-       m = 2;
+       m = 2; //metric
        M = 2;
        switch(systemOfMeasurment)
-       {
+       { //with the inputs, determines which system of measurment to use 
            case "I":
        {
             weight = height*height*25/703;
-            outputLabel.setText(name +"'s ideal weight is " + (x.format(weight))+ " lbs.");
+            outputLabel.setText(name +"'s ideal weight is " + (x.format(weight))+ " lbs."); //height in inches
             break;  
        }
            case "i":
@@ -193,7 +191,7 @@ public class display extends javax.swing.JFrame {
            case "M":
            {
             weight = height*height*25;
-            outputLabel.setText(name +"'s ideal weight is " + (x.format(weight))+ "kgs.");
+            outputLabel.setText(name +"'s ideal weight is " + (x.format(weight))+ "kgs."); //height in metres
             break;    
            }
            case "m":
